@@ -1,5 +1,8 @@
 # MisoTTS-ComfyUI
 
+<img width="1420" height="261" alt="image" src="https://github.com/user-attachments/assets/bd84a8c3-5a4f-4654-9471-b7caba63f9bb" />
+
+
 **Miso TTS 8B nodes for ComfyUI** - Sesame-style CSM text-to-speech with Mimi audio tokens, optional reference-audio continuation, Whisper transcription, ComfyUI AUDIO wiring, and Aimdo/VRAM-management integration.
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/Saganaki22/MisoTTS-ComfyUI)
@@ -11,6 +14,9 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 > <u>Important: reference audio is prompt/context conditioning, not guaranteed speaker-identity cloning.</u> The upstream README describes conditioning on prior audio for voice cloning, but the public inference code implements this as conversational `Segment(text, speaker, audio)` context. It can follow a reference voice sometimes, but it can also drift or change speaker characteristics.
+
+<img width="2131" height="1213" alt="Screenshot 2026-06-04 002405" src="https://github.com/user-attachments/assets/8912014f-a953-42fd-add3-8f3cc9a8593b" />
+
 
 ## Features
 
