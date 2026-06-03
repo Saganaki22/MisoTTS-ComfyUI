@@ -1,0 +1,356 @@
+{
+  "id": "ff55c5fb-e2d1-4037-be22-0eea5518c1ab",
+  "revision": 0,
+  "last_node_id": 27,
+  "last_link_id": 56,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "MisoTTSWhisperTranscribe",
+      "pos": [
+        1204.1976343884814,
+        1347.4966402786722
+      ],
+      "size": [
+        344.4273617331005,
+        178
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "transcript",
+          "type": "STRING",
+          "links": [
+            9,
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MisoTTSWhisperTranscribe"
+      },
+      "widgets_values": [
+        "whisper-large-v3-turbo (auto-download)",
+        "auto",
+        "auto",
+        "transcribe",
+        30,
+        false
+      ]
+    },
+    {
+      "id": 25,
+      "type": "MisoTTSLoadModel",
+      "pos": [
+        1195.897991465241,
+        953.6898907996912
+      ],
+      "size": [
+        335.16549392634033,
+        130
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "miso_model",
+          "type": "MISO_MODEL",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MisoTTSLoadModel"
+      },
+      "widgets_values": [
+        "MisoTTS 8B BF16 (drbaph)",
+        "auto",
+        "auto",
+        false
+      ]
+    },
+    {
+      "id": 9,
+      "type": "PreviewAny",
+      "pos": [
+        1205.0707811542122,
+        1575.72794503579
+      ],
+      "size": [
+        345.82769473154394,
+        164.90107353840426
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 27,
+      "type": "MarkdownNote",
+      "pos": [
+        747.9993891817663,
+        1036.4417021807365
+      ],
+      "size": [
+        418.3254564855549,
+        562.5065278865077
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "‎",
+      "properties": {},
+      "widgets_values": [
+        "## MisoTTS-ComfyUI Model Requirements\n\n**VRAM:** BF16 MisoTTS needs about **18-20 GB VRAM** during generation. FP32 is much heavier.  \nMisoTTS has **Aimdo / ComfyUI model-management integration** for unload and VRAM visualization.\n\n**misotts** (main model, tokenizer, Mimi codec)\n\n- [🤗 model.safetensors](https://huggingface.co/MisoLabs/MisoTTS/resolve/main/model.safetensors) — official fp32\n- [🤗 misotts-bf16.safetensors](https://huggingface.co/drbaph/MisoTTS-BF16) — BF16, recommended\n- [🤗 unsloth/Llama-3.2-1B](https://huggingface.co/unsloth/Llama-3.2-1B) — tokenizer mirror\n- [🤗 kyutai/moshiko-pytorch-bf16](https://huggingface.co/kyutai/moshiko-pytorch-bf16) — Mimi codec\n\n**audio_encoders** (optional Whisper transcript node)\n\n- [🤗 openai/whisper-large-v3-turbo](https://huggingface.co/openai/whisper-large-v3-turbo)\n\n## Model Storage Location\n\n```text\nComfyUI/\n└── models/\n    ├── misotts/\n    │   ├── model.safetensors\n    │   ├── misotts-bf16.safetensors\n    │   ├── tokenizers/\n    │   │   └── unsloth_Llama-3.2-1B/\n    │   └── codecs/\n    │       └── kyutai_moshiko-pytorch-bf16/\n    │           └── tokenizer-e351c8d8-checkpoint125.safetensors\n    └── audio_encoders/\n        └── openai_whisper-large-v3-turbo/\n```\n\nIf `download_if_missing` is enabled, the nodes download missing assets to these folders automatically.\n\n**Links**\n\n- [Issues](https://github.com/Saganaki22/MisoTTS-ComfyUI/issues)\n- [Saganaki22/MisoTTS-ComfyUI](https://github.com/Saganaki22/MisoTTS-ComfyUI)\n- [Original MisoTTS Repo](https://github.com/MisoLabsAI/MisoTTS)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 5,
+      "type": "LoadAudio",
+      "pos": [
+        1197.15411794233,
+        1142.1755353660958
+      ],
+      "size": [
+        344.5,
+        152.53125
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            7,
+            52
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "Narrator-UK.wav",
+        null,
+        null
+      ]
+    },
+    {
+      "id": 24,
+      "type": "MisoTTSGenerate",
+      "pos": [
+        1582.7986250869967,
+        1059.883112894306
+      ],
+      "size": [
+        407.02216678149534,
+        516.6801971046436
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "miso_model",
+          "type": "MISO_MODEL",
+          "link": 55
+        },
+        {
+          "name": "reference_audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 52
+        },
+        {
+          "name": "reference_text",
+          "type": "STRING",
+          "widget": {
+            "name": "reference_text"
+          },
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            56
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MisoTTSGenerate"
+      },
+      "widgets_values": [
+        "Today, I'd like to share a simple thought: success doesn't come from one big achievement—it comes from small, consistent actions taken every day. Whether we're learning a new skill, working toward a goal, or helping others, progress happens step by step. If we stay focused, keep learning, and don't give up when things get difficult, we can achieve more than we imagine. Thank you for listening, and have a great day.",
+        "",
+        0,
+        10,
+        true,
+        80,
+        0.9,
+        50,
+        934910839,
+        "randomize"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "SaveAudioMP3",
+      "pos": [
+        2029.1719668163469,
+        1068.1259271739502
+      ],
+      "size": [
+        270,
+        136
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 56
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "SaveAudioMP3"
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "V0"
+      ]
+    }
+  ],
+  "links": [
+    [
+      7,
+      5,
+      0,
+      8,
+      0,
+      "AUDIO"
+    ],
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "STRING"
+    ],
+    [
+      52,
+      5,
+      0,
+      24,
+      1,
+      "AUDIO"
+    ],
+    [
+      53,
+      8,
+      0,
+      24,
+      2,
+      "STRING"
+    ],
+    [
+      55,
+      25,
+      0,
+      24,
+      0,
+      "MISO_MODEL"
+    ],
+    [
+      56,
+      24,
+      0,
+      26,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Miso TTS",
+      "bounding": [
+        1185.897991465241,
+        883.6898907996912,
+        1138.072606662542,
+        866.9391277745032
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.2839025177495054,
+      "offset": [
+        -647.9993891817663,
+        -853.6898907996912
+      ]
+    },
+    "frontendVersion": "1.44.19",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

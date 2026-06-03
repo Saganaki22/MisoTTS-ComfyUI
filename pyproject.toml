@@ -1,0 +1,17 @@
+[project]
+name = "MisoTTS-ComfyUI"
+description = "ComfyUI custom nodes for Miso TTS 8B, a Sesame-style CSM text-to-speech model with Mimi audio codes."
+version = "0.1.0"
+license = {text = "Apache-2.0"}
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/saganaki22/MisoTTS-ComfyUI"
+MisoTTS = "https://huggingface.co/MisoLabs/MisoTTS"
+OfficialMisoTTS = "https://github.com/MisoLabsAI/MisoTTS"
+
+[tool.comfy]
+PublisherId = "saganaki22"
+DisplayName = "Miso TTS"
+Icon = "https://avatars.githubusercontent.com/u/84208527"
+PreInstall = "install.py"

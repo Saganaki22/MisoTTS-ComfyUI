@@ -1,0 +1,16 @@
+# MisoTTS-ComfyUI dependency reference.
+#
+# Use install.py for normal installs:
+#   python install.py
+#
+# Dependency reference only. Keep these commented so automated installers do
+# not bypass install.py and accidentally resolve/replace ComfyUI packages.
+#
+# install.py installs these safely with uv-or-pip and --no-deps:
+# huggingface_hub
+# numpy
+# safetensors
+# tokenizers
+# transformers>=4.52.1
+# torchtune==0.4.0
+# moshi==0.2.2
