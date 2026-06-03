@@ -334,7 +334,7 @@ Kyutai Mimi/Moshi citation from the Mimi model card:
 
 ## License
 
-This custom node is released under the Apache 2.0 License. Miso TTS, Mimi, Moshi, Whisper, torchtune, and related upstream models/code each have their own licenses. Check the linked upstream repositories and model cards before redistribution or commercial use.
+This custom node is released under the MIT License. Miso TTS, Mimi, Moshi, Whisper, torchtune, and related upstream models/code each have their own licenses. Check the linked upstream repositories and model cards before redistribution or commercial use.
 
 ## Star History
 
