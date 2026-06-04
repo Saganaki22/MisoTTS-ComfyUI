@@ -2,7 +2,7 @@
 name = "MisoTTS-ComfyUI"
 description = "ComfyUI custom nodes for Miso TTS 8B, a Sesame-style CSM text-to-speech model with Mimi audio codes."
 version = "0.1.0"
-license = {text = "Apache-2.0"}
+license = {text = "LICENSE"}
 dependencies = []
 
 [project.urls]
