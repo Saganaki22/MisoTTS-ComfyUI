@@ -11,7 +11,6 @@
 [![MisoTTS BF16](https://img.shields.io/badge/%F0%9F%A4%97%20MisoTTS--BF16-drbaph%2FMisoTTS--BF16-blue)](https://huggingface.co/drbaph/MisoTTS-BF16)
 [![Official Code](https://img.shields.io/badge/GitHub%20Official-MisoLabsAI%2FMisoTTS-black)](https://github.com/MisoLabsAI/MisoTTS)
 [![Mimi Codec](https://img.shields.io/badge/%F0%9F%A4%97%20Mimi-kyutai%2Fmimi-yellow)](https://huggingface.co/kyutai/mimi)
-[![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 > <u>Important: reference audio is prompt/context conditioning, not guaranteed speaker-identity cloning.</u> The upstream README describes conditioning on prior audio for voice cloning, but the public inference code implements this as conversational `Segment(text, speaker, audio)` context. It can follow a reference voice sometimes, but it can also drift or change speaker characteristics.
 
